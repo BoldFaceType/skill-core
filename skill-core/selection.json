@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "status": "selected-pending-lock",
+  "updated": "2026-08-08",
+  "supersedes": {
+    "updated": "2026-08-04",
+    "core_size": 22
+  },
+  "amendments_applied": [
+    "rename  to-prd -> to-spec",
+    "rename  to-issues -> to-tickets",
+    "replace xlsx (anthropics/skills) -> gws-sheets (googleworkspace/cli)",
+    "replace doc-coauthoring (anthropics/skills) -> documentation (anthropics/knowledge-work-plugins)",
+    "pin     skillopt-sleep -> codex variant",
+    "add     to-questionnaire (required by process-discovery stage 4)"
+  ],
+  "core_size": 23,
+  "skills": [
+    {
+      "id": "grill-me",
+      "source": "mattpocock/skills",
+      "group": "engineering"
+    },
+    {
+      "id": "improve-codebase-architecture",
+      "source": "mattpocock/skills",
+      "group": "engineering"
+    },
+    {
+      "id": "tdd",
+      "source": "mattpocock/skills",
+      "group": "engineering"
+    },
+    {
+      "id": "handoff",
+      "source": "mattpocock/skills",
+      "group": "engineering"
+    },
+    {
+      "id": "prototype",
+      "source": "mattpocock/skills",
+      "group": "engineering"
+    },
+    {
+      "id": "to-spec",
+      "source": "mattpocock/skills",
+      "group": "engineering"
+    },
+    {
+      "id": "to-tickets",
+      "source": "mattpocock/skills",
+      "group": "engineering"
+    },
+    {
+      "id": "domain-modeling",
+      "source": "mattpocock/skills",
+      "group": "engineering"
+    },
+    {
+      "id": "diagnosing-bugs",
+      "source": "mattpocock/skills",
+      "group": "engineering"
+    },
+    {
+      "id": "implement",
+      "source": "mattpocock/skills",
+      "group": "engineering"
+    },
+    {
+      "id": "code-review",
+      "source": "mattpocock/skills",
+      "group": "engineering"
+    },
+    {
+      "id": "find-skills",
+      "source": "vercel-labs/skills",
+      "group": "general"
+    },
+    {
+      "id": "skill-creator",
+      "source": "anthropics/skills",
+      "group": "general"
+    },
+    {
+      "id": "gws-sheets",
+      "source": "googleworkspace/cli",
+      "group": "general"
+    },
+    {
+      "id": "documentation",
+      "source": "anthropics/knowledge-work-plugins",
+      "group": "general"
+    },
+    {
+      "id": "internal-comms",
+      "source": "anthropics/skills",
+      "group": "general"
+    },
+    {
+      "id": "task-management",
+      "source": "anthropics/knowledge-work-plugins",
+      "group": "general"
+    },
+    {
+      "id": "pdf",
+      "source": "openai/skills",
+      "group": "general"
+    },
+    {
+      "id": "meeting-minutes",
+      "source": "github/awesome-copilot",
+      "group": "general"
+    },
+    {
+      "id": "gws-workflow-email-to-task",
+      "source": "googleworkspace/cli",
+      "group": "general"
+    },
+    {
+      "id": "hf-cli",
+      "source": "huggingface/skills",
+      "group": "general"
+    },
+    {
+      "id": "skillopt-sleep",
+      "source": "microsoft/SkillOpt",
+      "group": "general",
+      "path": "plugins/codex/skills/skillopt-sleep/SKILL.md"
+    },
+    {
+      "id": "to-questionnaire",
+      "source": "mattpocock/skills",
+      "group": "engineering"
+    }
+  ]
+}

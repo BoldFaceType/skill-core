@@ -1,0 +1,35 @@
+name: verify
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  schedule:
+    - cron: "17 6 * * 1"   # weekly upstream drift check
+
+jobs:
+  core:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # FR1 gate. Offline: asserts selected + locked + licensed + vendored
+      # and re-hashes every vendored file against the lock.
+      - name: Verify core integrity (FR1)
+        run: python scripts/verify_core.py
+
+      # Workflow manifests resolve against the lock.
+      - name: Validate workflows
+        run: python scripts/validate_workflows.py
+
+      # Network. Fails if upstream content diverges from the lock.
+      - name: Check upstream drift
+        run: python scripts/lock_sources.py --check
+
+      # Vendored tree must match what the lock would produce.
+      - name: Check vendoring is current
+        run: python scripts/vendor_skills.py --dry-run

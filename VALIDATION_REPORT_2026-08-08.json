@@ -1,0 +1,33 @@
+{
+  "project": "Skill Core (formerly SkillStore v3)",
+  "milestone": "VSA 0.2 - source lock and vendoring",
+  "date": "2026-08-08",
+  "supersedes": "VALIDATION_REPORT.json (2026-08-04)",
+  "status": "pass",
+  "checks": {
+    "source_resolution": {"status": "pass", "method": "git-protocol shallow blobless clone", "repos_resolved": 9, "repos_failed": 0},
+    "skill_id_matching": {"status": "pass", "selected": 23, "matched": 23, "unresolved": 0, "ambiguous": 0, "pinned_paths": ["skillopt-sleep"]},
+    "license_verification": {
+      "status": "pass",
+      "method": "nearest-first resolution from the skill directory upward",
+      "passed": 23, "rejected": 0,
+      "distribution": {"MIT": 15, "Apache-2.0": 8},
+      "finding": "anthropics/skills licenses per skill, not per repository. A repo-level check would have wrongly cleared xlsx (all rights reserved) and doc-coauthoring (no license). Both were dropped and replaced with Apache-2.0 equivalents."
+    },
+    "source_lock_generation": {"status": "pass", "artifact": "skill-core/sources.lock.json", "core_size_locked": 23, "reproducible": true, "idempotent": true},
+    "drift_check": {"status": "pass", "command": "lock_sources.py --check", "exit_code": 0, "result": "lock matches upstream"},
+    "workflow_validation": {"status": "pass", "command": "validate_workflows.py", "exit_code": 0, "workflows": 1, "failures": 0, "warnings": 0},
+    "vendoring": {
+      "status": "pass",
+      "core_skills_materialized": 23,
+      "files_written": 91,
+      "includes": "SKILL.md plus sibling scripts/references and the governing LICENSE per skill",
+      "post_write_hash_verification": "23/23 sha256 match against lock"
+    },
+    "projection_smoke_test": {"status": "not_run", "reason": "requires the installer from the main repository; vendored tree is ready as its input"},
+    "remote_repository": {"status": "not_created", "note": "unchanged; repository exists in one location only. User action."}
+  },
+  "blocking_items": [],
+  "core_size": 23,
+  "recommendation": "Amend PRD FR1 to state the requirement as a property (every selected skill locked, licensed, vendored) rather than a fixed count of 22. Core is now 23; a required number creates pressure to retain a skill that fails a license check."
+}

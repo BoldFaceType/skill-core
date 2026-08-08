@@ -1,0 +1,451 @@
+{
+  "schema_version": 1,
+  "status": "locked",
+  "generated": "2026-08-08",
+  "generated_utc": "2026-08-08T20:18:23+00:00",
+  "generator": "scripts/lock_sources.py",
+  "verification_method": "git-protocol shallow blobless clone; commit SHA, blob SHA, sha256 recorded per file",
+  "core_size_selected": 23,
+  "core_size_locked": 23,
+  "unresolved_count": 0,
+  "rejected_count": 0,
+  "skills": [
+    {
+      "id": "code-review",
+      "group": "engineering",
+      "source_repo": "mattpocock/skills",
+      "source_url": "https://github.com/mattpocock/skills",
+      "path": "skills/engineering/code-review/SKILL.md",
+      "path_pinned": false,
+      "commit": "84fdeffd12f2ee307994d1eb6feb48173b6e0502",
+      "blob_sha": "2d276fe88bddd363395b4887a555769222a34975",
+      "content_sha256": "9cf46653dd9c710ea1e6c22423caf31a794c88773bc94bdaa23140277f470442",
+      "size_bytes": 6634,
+      "license_file": "LICENSE",
+      "license_spdx": "MIT",
+      "vendor_path": "skill-core/vendor/mattpocock-skills/code-review/SKILL.md",
+      "frontmatter": {
+        "name": "code-review",
+        "description": "Review the changes since a fixed point (commit, branch, tag, or merge-base) along two axes \u2014 Standards (does the code follow this repo's documented coding standards?) and Spec (does the code match what the originating issue/spec asked for?). Runs both reviews in parallel sub-agents and reports them side by side. Use when the user wants to review a branch, a PR, work-in-progress changes, or asks to \"review since X\"."
+      }
+    },
+    {
+      "id": "diagnosing-bugs",
+      "group": "engineering",
+      "source_repo": "mattpocock/skills",
+      "source_url": "https://github.com/mattpocock/skills",
+      "path": "skills/engineering/diagnosing-bugs/SKILL.md",
+      "path_pinned": false,
+      "commit": "84fdeffd12f2ee307994d1eb6feb48173b6e0502",
+      "blob_sha": "7f8acf7e3c5929a557d7bf26c88a7844551e3976",
+      "content_sha256": "b9339b09ee3980808d8c5a35c7251b891b8b1e0036ec4ca37812b976ebddf6b6",
+      "size_bytes": 8969,
+      "license_file": "LICENSE",
+      "license_spdx": "MIT",
+      "vendor_path": "skill-core/vendor/mattpocock-skills/diagnosing-bugs/SKILL.md",
+      "frontmatter": {
+        "name": "diagnosing-bugs",
+        "description": "Diagnosis loop for hard bugs and performance regressions. Use when the user says \"diagnose\"/\"debug this\", or reports something broken/throwing/failing/slow."
+      }
+    },
+    {
+      "id": "documentation",
+      "group": "general",
+      "source_repo": "anthropics/knowledge-work-plugins",
+      "source_url": "https://github.com/anthropics/knowledge-work-plugins",
+      "path": "engineering/skills/documentation/SKILL.md",
+      "path_pinned": false,
+      "commit": "805cec468cbb6a3e8c35ca286a5608adb2b11f7c",
+      "blob_sha": "9a5a69394edd00e449625a928ec7e196db6feef4",
+      "content_sha256": "1d469418f786a05be83d2a05f04d68788aeed584d13863a650f5ad73c6c4cf50",
+      "size_bytes": 1507,
+      "license_file": "LICENSE",
+      "license_spdx": "Apache-2.0",
+      "vendor_path": "skill-core/vendor/anthropics-knowledge-work-plugins/documentation/SKILL.md",
+      "frontmatter": {
+        "name": "documentation",
+        "description": "Write and maintain technical documentation. Trigger with \"write docs for\", \"document this\", \"create a README\", \"write a runbook\", \"onboarding guide\", or when the user needs help with any form of technical writing \u2014 API docs, architecture docs, or operational runbooks."
+      }
+    },
+    {
+      "id": "domain-modeling",
+      "group": "engineering",
+      "source_repo": "mattpocock/skills",
+      "source_url": "https://github.com/mattpocock/skills",
+      "path": "skills/engineering/domain-modeling/SKILL.md",
+      "path_pinned": false,
+      "commit": "84fdeffd12f2ee307994d1eb6feb48173b6e0502",
+      "blob_sha": "d0f7e1a5ccb06a7184056ff9af02b67bc77f9dda",
+      "content_sha256": "152e2c97239affb12a60c5f4a7e74ab546a49ae169688c81f4e2ccc42dafa579",
+      "size_bytes": 3427,
+      "license_file": "LICENSE",
+      "license_spdx": "MIT",
+      "vendor_path": "skill-core/vendor/mattpocock-skills/domain-modeling/SKILL.md",
+      "frontmatter": {
+        "name": "domain-modeling",
+        "description": "Build and sharpen a project's domain model. Use when the user wants to pin down domain terminology or a ubiquitous language, record an architectural decision, or when another skill needs to maintain the domain model."
+      }
+    },
+    {
+      "id": "find-skills",
+      "group": "general",
+      "source_repo": "vercel-labs/skills",
+      "source_url": "https://github.com/vercel-labs/skills",
+      "path": "skills/find-skills/SKILL.md",
+      "path_pinned": false,
+      "commit": "941a7bcfeca4bf07913b9fb6f8ed81f20ff5297c",
+      "blob_sha": "a41bdd074bb587afd861332cf2f473f3154de4d7",
+      "content_sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+      "size_bytes": 5472,
+      "license_file": "LICENSE",
+      "license_spdx": "MIT",
+      "vendor_path": "skill-core/vendor/vercel-labs-skills/find-skills/SKILL.md",
+      "frontmatter": {
+        "name": "find-skills",
+        "description": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable skill."
+      }
+    },
+    {
+      "id": "grill-me",
+      "group": "engineering",
+      "source_repo": "mattpocock/skills",
+      "source_url": "https://github.com/mattpocock/skills",
+      "path": "skills/productivity/grill-me/SKILL.md",
+      "path_pinned": false,
+      "commit": "84fdeffd12f2ee307994d1eb6feb48173b6e0502",
+      "blob_sha": "9470cfcfe231a35e46494cddbacdd395991afb1e",
+      "content_sha256": "6189dfceb7304a6e5558f75d87e68fa3bc7fcf7ba120e44f21f8a61fe01eba54",
+      "size_bytes": 147,
+      "license_file": "LICENSE",
+      "license_spdx": "MIT",
+      "vendor_path": "skill-core/vendor/mattpocock-skills/grill-me/SKILL.md",
+      "frontmatter": {
+        "name": "grill-me",
+        "description": "A relentless interview to sharpen a plan or design."
+      }
+    },
+    {
+      "id": "gws-sheets",
+      "group": "general",
+      "source_repo": "googleworkspace/cli",
+      "source_url": "https://github.com/googleworkspace/cli",
+      "path": "skills/gws-sheets/SKILL.md",
+      "path_pinned": false,
+      "commit": "a3768d0e82ad83cca2da97724e46bea4ff0e6dbd",
+      "blob_sha": "d713253dbd00de9a8bcaa8859f936f21eb156c41",
+      "content_sha256": "e0db8bb632b3425b6f10dac7b30c85a4ba6ed0fd8421bccd3d2242588cc02208",
+      "size_bytes": 2602,
+      "license_file": "LICENSE",
+      "license_spdx": "Apache-2.0",
+      "vendor_path": "skill-core/vendor/googleworkspace-cli/gws-sheets/SKILL.md",
+      "frontmatter": {
+        "name": "gws-sheets",
+        "description": "Google Sheets: Read and write spreadsheets."
+      }
+    },
+    {
+      "id": "gws-workflow-email-to-task",
+      "group": "general",
+      "source_repo": "googleworkspace/cli",
+      "source_url": "https://github.com/googleworkspace/cli",
+      "path": "skills/gws-workflow-email-to-task/SKILL.md",
+      "path_pinned": false,
+      "commit": "a3768d0e82ad83cca2da97724e46bea4ff0e6dbd",
+      "blob_sha": "bf9456d77622ecf3cae0d7544602b95ba3faeb13",
+      "content_sha256": "07dfd3803f8205d9f57a68bc3b1e61de937f58ed9f2082ddabe8e3266239a3bd",
+      "size_bytes": 1264,
+      "license_file": "LICENSE",
+      "license_spdx": "Apache-2.0",
+      "vendor_path": "skill-core/vendor/googleworkspace-cli/gws-workflow-email-to-task/SKILL.md",
+      "frontmatter": {
+        "name": "gws-workflow-email-to-task",
+        "description": "Google Workflow: Convert a Gmail message into a Google Tasks entry."
+      }
+    },
+    {
+      "id": "handoff",
+      "group": "engineering",
+      "source_repo": "mattpocock/skills",
+      "source_url": "https://github.com/mattpocock/skills",
+      "path": "skills/productivity/handoff/SKILL.md",
+      "path_pinned": false,
+      "commit": "84fdeffd12f2ee307994d1eb6feb48173b6e0502",
+      "blob_sha": "043d9e13dc7eca3002a47d3ab9865c568f647863",
+      "content_sha256": "57c9f1f392d7352cdc85b1e39ca49eddc70ce1dc278bd9653fb4f23dfc2560fc",
+      "size_bytes": 879,
+      "license_file": "LICENSE",
+      "license_spdx": "MIT",
+      "vendor_path": "skill-core/vendor/mattpocock-skills/handoff/SKILL.md",
+      "frontmatter": {
+        "name": "handoff",
+        "description": "Compact the current conversation into a handoff document for another agent to pick up."
+      }
+    },
+    {
+      "id": "hf-cli",
+      "group": "general",
+      "source_repo": "huggingface/skills",
+      "source_url": "https://github.com/huggingface/skills",
+      "path": "skills/hf-cli/SKILL.md",
+      "path_pinned": false,
+      "commit": "ec0108293521ef698e451ec044e8b4feba6b732b",
+      "blob_sha": "dbc9f277fbb8641595278537c75b9476862eb9b5",
+      "content_sha256": "9b9f11ddd1004020489deedb7c0d068d3dcf72e10811879a07da69988cc2077a",
+      "size_bytes": 31932,
+      "license_file": "LICENSE",
+      "license_spdx": "Apache-2.0",
+      "vendor_path": "skill-core/vendor/huggingface-skills/hf-cli/SKILL.md",
+      "frontmatter": {
+        "name": "hf-cli",
+        "description": "Hugging Face Hub CLI (`hf`) for downloading, uploading, and managing models, datasets, spaces, buckets, repos, papers, jobs, and more on the Hugging Face Hub. Use when: handling authentication; managing local cache; managing Hugging Face Buckets; running or scheduling jobs on Hugging Face infrastructure; managing Hugging Face repos; discussions and pull requests; browsing models, datasets and spaces; reading, searching, or browsing academic papers; managing collections; querying datasets; configuring spaces; setting up webhooks; or deploying and managing HF Inference Endpoints. Make sure to use this skill whenever the user mentions 'hf', 'huggingface', 'Hugging Face', 'huggingface-cli', or 'hugging face cli', or wants to do anything related to the Hugging Face ecosystem and to AI and ML in general. Also use for cloud storage needs like training checkpoints, data pipelines, or agent traces. Use even if the user doesn't explicitly ask for a CLI command. Replaces the deprecated `huggingface-cli`."
+      }
+    },
+    {
+      "id": "implement",
+      "group": "engineering",
+      "source_repo": "mattpocock/skills",
+      "source_url": "https://github.com/mattpocock/skills",
+      "path": "skills/engineering/implement/SKILL.md",
+      "path_pinned": false,
+      "commit": "84fdeffd12f2ee307994d1eb6feb48173b6e0502",
+      "blob_sha": "7a0b11f5f4fe9505ea5c7983c3083ba1bf754f69",
+      "content_sha256": "6d3fd9e83b8f36e5213854779db49b256a457a7ebb4a503e53fa7dcff696adc3",
+      "size_bytes": 433,
+      "license_file": "LICENSE",
+      "license_spdx": "MIT",
+      "vendor_path": "skill-core/vendor/mattpocock-skills/implement/SKILL.md",
+      "frontmatter": {
+        "name": "implement",
+        "description": "Implement a piece of work based on a spec or set of tickets."
+      }
+    },
+    {
+      "id": "improve-codebase-architecture",
+      "group": "engineering",
+      "source_repo": "mattpocock/skills",
+      "source_url": "https://github.com/mattpocock/skills",
+      "path": "skills/engineering/improve-codebase-architecture/SKILL.md",
+      "path_pinned": false,
+      "commit": "84fdeffd12f2ee307994d1eb6feb48173b6e0502",
+      "blob_sha": "529761a3a01d35996018f27530b3c3cc0ab18d41",
+      "content_sha256": "7b76f01b0eefe49a127754c9027a6235a036a21348df5dad988893d8b2f384d6",
+      "size_bytes": 6009,
+      "license_file": "LICENSE",
+      "license_spdx": "MIT",
+      "vendor_path": "skill-core/vendor/mattpocock-skills/improve-codebase-architecture/SKILL.md",
+      "frontmatter": {
+        "name": "improve-codebase-architecture",
+        "description": "Scan a codebase for deepening opportunities, present them as a visual HTML report, then grill through whichever one you pick."
+      }
+    },
+    {
+      "id": "internal-comms",
+      "group": "general",
+      "source_repo": "anthropics/skills",
+      "source_url": "https://github.com/anthropics/skills",
+      "path": "skills/internal-comms/SKILL.md",
+      "path_pinned": false,
+      "commit": "f17010c9bb483898c1d9c9f42dde2b3a98889434",
+      "blob_sha": "56ea935b74f371bfeb4c7d3c19d5139df866e73b",
+      "content_sha256": "067b7587a344a928fc6534ef66b1bcd591fc7c26d207ea7ca3334aeb678d6475",
+      "size_bytes": 1511,
+      "license_file": "skills/internal-comms/LICENSE.txt",
+      "license_spdx": "Apache-2.0",
+      "vendor_path": "skill-core/vendor/anthropics-skills/internal-comms/SKILL.md",
+      "frontmatter": {
+        "name": "internal-comms",
+        "description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.)."
+      }
+    },
+    {
+      "id": "meeting-minutes",
+      "group": "general",
+      "source_repo": "github/awesome-copilot",
+      "source_url": "https://github.com/github/awesome-copilot",
+      "path": "skills/meeting-minutes/SKILL.md",
+      "path_pinned": false,
+      "commit": "ab7544d03d4c49fdd07f5958e1888ad39c4118e2",
+      "blob_sha": "63424b8be544169f9206b8ce9e9e6d4e67219f69",
+      "content_sha256": "69420bbe78b2f6c81f9689672360dd97e71e9fc83045a70e3d6924f24973a789",
+      "size_bytes": 7894,
+      "license_file": "LICENSE",
+      "license_spdx": "MIT",
+      "vendor_path": "skill-core/vendor/github-awesome-copilot/meeting-minutes/SKILL.md",
+      "frontmatter": {
+        "name": "meeting-minutes",
+        "description": "Generate concise, actionable meeting minutes for internal meetings. Includes metadata, attendees, agenda, decisions, action items (owner + due date), and follow-up steps."
+      }
+    },
+    {
+      "id": "pdf",
+      "group": "general",
+      "source_repo": "openai/skills",
+      "source_url": "https://github.com/openai/skills",
+      "path": "skills/.curated/pdf/SKILL.md",
+      "path_pinned": false,
+      "commit": "49f948faa9258a0c61caceaf225e179651397431",
+      "blob_sha": "fd5d56058f10202e4f50a30bc2906f39696024a1",
+      "content_sha256": "d108cf2b36355ab37eb5962933f4d09785ec002f3105c506129320209306b9d2",
+      "size_bytes": 2517,
+      "license_file": "skills/.curated/pdf/LICENSE.txt",
+      "license_spdx": "Apache-2.0",
+      "vendor_path": "skill-core/vendor/openai-skills/pdf/SKILL.md",
+      "frontmatter": {
+        "name": "pdf",
+        "description": "Use when tasks involve reading, creating, or reviewing PDF files where rendering and layout matter; prefer visual checks by rendering pages (Poppler) and use Python tools such as `reportlab`, `pdfplumber`, and `pypdf` for generation and extraction."
+      }
+    },
+    {
+      "id": "prototype",
+      "group": "engineering",
+      "source_repo": "mattpocock/skills",
+      "source_url": "https://github.com/mattpocock/skills",
+      "path": "skills/engineering/prototype/SKILL.md",
+      "path_pinned": false,
+      "commit": "84fdeffd12f2ee307994d1eb6feb48173b6e0502",
+      "blob_sha": "094571156140f5993cce8557dc31383c82817f3e",
+      "content_sha256": "2579ecf89a7fb7e73345117405c7ba9b9fb5ab22a78ecb08b0ce68b73f0148c2",
+      "size_bytes": 2954,
+      "license_file": "LICENSE",
+      "license_spdx": "MIT",
+      "vendor_path": "skill-core/vendor/mattpocock-skills/prototype/SKILL.md",
+      "frontmatter": {
+        "name": "prototype",
+        "description": "Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like."
+      }
+    },
+    {
+      "id": "skill-creator",
+      "group": "general",
+      "source_repo": "anthropics/skills",
+      "source_url": "https://github.com/anthropics/skills",
+      "path": "skills/skill-creator/SKILL.md",
+      "path_pinned": false,
+      "commit": "f17010c9bb483898c1d9c9f42dde2b3a98889434",
+      "blob_sha": "65b3a402dbd09b8e83f9d637c6b553875189085c",
+      "content_sha256": "dcd4803e61e913e6fc27294184cd3a71f09f5e924ff20c8a9a20173e7b3c2bcf",
+      "size_bytes": 33168,
+      "license_file": "skills/skill-creator/LICENSE.txt",
+      "license_spdx": "Apache-2.0",
+      "vendor_path": "skill-core/vendor/anthropics-skills/skill-creator/SKILL.md",
+      "frontmatter": {
+        "name": "skill-creator",
+        "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy."
+      }
+    },
+    {
+      "id": "skillopt-sleep",
+      "group": "general",
+      "source_repo": "microsoft/SkillOpt",
+      "source_url": "https://github.com/microsoft/SkillOpt",
+      "path": "plugins/codex/skills/skillopt-sleep/SKILL.md",
+      "path_pinned": true,
+      "commit": "47fe269d75d3def79ffd90236261d26d84868ae5",
+      "blob_sha": "6d6fd16686e451436299b506d88eed96ac1362a9",
+      "content_sha256": "8e8d04ca274f9e7a2fc8c9efd3d58c661962329533fe419a9f72e6fdefd53012",
+      "size_bytes": 9031,
+      "license_file": "LICENSE",
+      "license_spdx": "MIT",
+      "vendor_path": "skill-core/vendor/microsoft-SkillOpt/skillopt-sleep/SKILL.md",
+      "frontmatter": {
+        "name": "skillopt-sleep",
+        "description": "Use when the user wants Codex to self-improve from past usage, asks about a nightly/offline 'sleep' or 'dream' cycle, wants Codex to review past sessions, learn preferences, consolidate memory/skills, run dry-run/run/adopt/status for SkillOpt-Sleep, or schedule background self-optimization. Drives the skillopt_sleep engine: harvest past sessions -> mine recurring tasks -> replay through a selected backend -> consolidate validated memory + skills behind a held-out gate."
+      }
+    },
+    {
+      "id": "task-management",
+      "group": "general",
+      "source_repo": "anthropics/knowledge-work-plugins",
+      "source_url": "https://github.com/anthropics/knowledge-work-plugins",
+      "path": "productivity/skills/task-management/SKILL.md",
+      "path_pinned": false,
+      "commit": "805cec468cbb6a3e8c35ca286a5608adb2b11f7c",
+      "blob_sha": "4ce03af7134985f56881d4d90640f904991868e5",
+      "content_sha256": "db1320873d68caab09cdbc1788e78d81e3b9b7cc6b499e2c4b975f25e873049f",
+      "size_bytes": 2604,
+      "license_file": "productivity/LICENSE",
+      "license_spdx": "Apache-2.0",
+      "vendor_path": "skill-core/vendor/anthropics-knowledge-work-plugins/task-management/SKILL.md",
+      "frontmatter": {
+        "name": "task-management",
+        "description": "Simple task management using a shared TASKS.md file. Reference this when the user asks about their tasks, wants to add/complete tasks, or needs help tracking commitments."
+      }
+    },
+    {
+      "id": "tdd",
+      "group": "engineering",
+      "source_repo": "mattpocock/skills",
+      "source_url": "https://github.com/mattpocock/skills",
+      "path": "skills/engineering/tdd/SKILL.md",
+      "path_pinned": false,
+      "commit": "84fdeffd12f2ee307994d1eb6feb48173b6e0502",
+      "blob_sha": "ead7781d79eb11cdafa1ac2db978cadef0eba240",
+      "content_sha256": "5e6b9c16b547113e90afbb946489d1c1384be5c2128f0159bd0bee57251ecf08",
+      "size_bytes": 3568,
+      "license_file": "LICENSE",
+      "license_spdx": "MIT",
+      "vendor_path": "skill-core/vendor/mattpocock-skills/tdd/SKILL.md",
+      "frontmatter": {
+        "name": "tdd",
+        "description": "Test-driven development. Use when the user wants to build features or fix bugs test-first, mentions \"red-green-refactor\", or wants integration tests."
+      }
+    },
+    {
+      "id": "to-questionnaire",
+      "group": "engineering",
+      "source_repo": "mattpocock/skills",
+      "source_url": "https://github.com/mattpocock/skills",
+      "path": "skills/productivity/to-questionnaire/SKILL.md",
+      "path_pinned": false,
+      "commit": "84fdeffd12f2ee307994d1eb6feb48173b6e0502",
+      "blob_sha": "1423375bb23923a754e931f034a9714b8f81dfcc",
+      "content_sha256": "8e7f9ed8d7b2e66babf1a54aee9b94319bf38c32619cffe78819df6518ead5fc",
+      "size_bytes": 2921,
+      "license_file": "LICENSE",
+      "license_spdx": "MIT",
+      "vendor_path": "skill-core/vendor/mattpocock-skills/to-questionnaire/SKILL.md",
+      "frontmatter": {
+        "name": "to-questionnaire",
+        "description": "Turn a decision you can't fully answer into a questionnaire for someone else to fill in."
+      }
+    },
+    {
+      "id": "to-spec",
+      "group": "engineering",
+      "source_repo": "mattpocock/skills",
+      "source_url": "https://github.com/mattpocock/skills",
+      "path": "skills/engineering/to-spec/SKILL.md",
+      "path_pinned": false,
+      "commit": "84fdeffd12f2ee307994d1eb6feb48173b6e0502",
+      "blob_sha": "3fd64959895b7eb095a13d797e1c7544f1f08c8f",
+      "content_sha256": "5d26479544b08048d3a8f79d937b39bc613a617f026b3fd083bafc1e99a7b811",
+      "size_bytes": 3035,
+      "license_file": "LICENSE",
+      "license_spdx": "MIT",
+      "vendor_path": "skill-core/vendor/mattpocock-skills/to-spec/SKILL.md",
+      "frontmatter": {
+        "name": "to-spec",
+        "description": "Turn the current conversation into a spec and publish it to the project issue tracker \u2014 no interview, just synthesis of what you've already discussed."
+      }
+    },
+    {
+      "id": "to-tickets",
+      "group": "engineering",
+      "source_repo": "mattpocock/skills",
+      "source_url": "https://github.com/mattpocock/skills",
+      "path": "skills/engineering/to-tickets/SKILL.md",
+      "path_pinned": false,
+      "commit": "84fdeffd12f2ee307994d1eb6feb48173b6e0502",
+      "blob_sha": "96deac51d4391a3f691478d48f85f43261516c08",
+      "content_sha256": "5ecdf1d4df8a360ed39df21a2347f97ba177afd449a577da4f6b6ea8e1ebb808",
+      "size_bytes": 5707,
+      "license_file": "LICENSE",
+      "license_spdx": "MIT",
+      "vendor_path": "skill-core/vendor/mattpocock-skills/to-tickets/SKILL.md",
+      "frontmatter": {
+        "name": "to-tickets",
+        "description": "Break a plan, spec, or the current conversation into a set of tracer-bullet tickets, each declaring its blocking edges, published to the configured tracker \u2014 edges as text in one file per ticket locally, or native blocking links on a real tracker."
+      }
+    }
+  ]
+}

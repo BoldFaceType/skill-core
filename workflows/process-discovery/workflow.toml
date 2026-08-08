@@ -1,0 +1,100 @@
+# Process Discovery — narrated process to sorted automation artifacts.
+#
+# Replaces the standalone Process Discovery Engine spec (2026-08-08).
+# Only the sorting decision survived; pipeline, gating, and state-tracking
+# are provided by Skill Core and are not reimplemented here.
+#
+# Input boundary (v0.1): a hand-produced .md or .txt transcript.
+# Screen capture and speech-to-text are OUT OF SCOPE. The hardest part of
+# the original spec was drawn as an arrow; it is named as manual here.
+
+[workflow]
+id          = "process-discovery"
+title       = "Process Discovery"
+description = "Turn a narrated process transcript into steps sorted into scripts, candidate skills, and human gates."
+version     = "0.1.0"
+default_engine = "codex"
+
+[tracker]
+primary = "linear"
+mode    = "link-only"
+
+[inputs]
+transcript = { type = "file", formats = ["md", "txt"], required = true, note = "Hand-produced. No ASR in v0.1." }
+process_name = { type = "string", required = true }
+
+# --- Stages -------------------------------------------------------------
+# Each stage names one exact Skill Core ID and writes one durable file.
+# The next stage reads that file, not the prior conversation.
+
+[[stage]]
+order  = 1
+id     = "decompose"
+skill  = "domain-modeling"
+input  = ["transcript"]
+output = "stages/01-decompose/steps.md"
+description = "Break the transcript into atomic steps. One action per step, with its inputs and outputs named."
+
+[[stage]]
+order  = 2
+id     = "interrogate"
+skill  = "grill-me"
+input  = ["stages/01-decompose/steps.md"]
+output = "stages/02-interrogate/open-questions.md"
+description = "Surface unstated assumptions, missing error paths, and steps whose description hides a judgment call."
+
+[[stage]]
+order  = 3
+id     = "sort"
+skill  = "to-spec"          # pending GAP_REPORT B1; was selected as `to-prd`
+input  = ["stages/01-decompose/steps.md", "stages/02-interrogate/open-questions.md"]
+output = "stages/03-sort/classification.md"
+description = """
+Apply the three sorting questions to each step, in order. First yes wins.
+
+  Q1  Is it irreversible, financial, published, or clinical?     -> GATE
+  Q2  Does it need judgment over variable input?                 -> SKILL
+  Q3  Fixed schema, no judgment?                                 -> SCRIPT
+
+A step that answers no to all three is under-specified: send it back to
+stage 2 rather than forcing a bucket.
+
+There is no numeric variability score. A 1-10 rating produced by a model is
+a judgment wearing a threshold's clothing, and the original spec's own PRD
+and ADR disagreed on where its HITL cutoff sat.
+"""
+
+[[stage]]
+order    = 4
+id       = "approve"
+gate     = true
+skill    = "to-questionnaire"
+input    = ["stages/03-sort/classification.md"]
+output   = "stages/04-approve/approved.md"
+description = "Human review of the classification. Every GATE and every SKILL is confirmed before anything is written."
+
+[[stage]]
+order  = 5
+id     = "emit"
+skill  = "skill-creator"
+input  = ["stages/04-approve/approved.md"]
+output = "stages/05-emit/manifest.md"
+description = """
+Write the approved artifacts:
+  SCRIPT -> scripts/generated/<process>/<step>.py   (AST-validated before write)
+  SKILL  -> candidates/<process>/<step>/SKILL.md    (NEVER into skill-core/)
+  GATE   -> stages/05-emit/gates.md                 (declaration only, no webhook writes in v0.1)
+"""
+
+# --- Admission rules ----------------------------------------------------
+# Carried forward from SkillStore v1.x as principles, not code.
+# See decisions/0003-skillstore-v1x-archived.md
+
+[admission]
+min_recurrence          = 2     # seen at least twice before it becomes an artifact
+max_description_overlap = 0.6   # reject near-duplicates of an existing core skill
+require_declared_inputs = true  # no reliance on ambient context
+
+[outputs]
+candidates_dir = "candidates/"  # candidates live OUTSIDE Skill Core (TASK_MANIFEST VSA 0.5)
+scripts_dir    = "scripts/generated/"

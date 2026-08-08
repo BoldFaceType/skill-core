@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Skill Core working state.
+# NOTE: .gitignore does not support inline comments -- a pattern must be alone
+# on its line, or the trailing comment becomes part of the pattern and matches
+# nothing. This bit us once already.
+
+# Upstream clones for lock_sources.py --check. Regenerable, and nested git repos.
+.cache/
+
+# Durable per-run execution state. Local, not shared.
+runs/
+
+# Proposed skills awaiting review. Never committed into the core.
+candidates/
+
+# skill-core/vendor/ IS committed. Vendoring exists so exact upstream skill
+# content is versioned alongside the lock that verifies it.
+
+# OS / editor
+Thumbs.db
+.DS_Store
+.idea/
+.vscode/

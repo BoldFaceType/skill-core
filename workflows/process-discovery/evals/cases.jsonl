@@ -1,0 +1,15 @@
+{"id":"c01","step":"Copy the weekly CSV export from Downloads into data/raw/ and rename it with today's date.","expect":"SCRIPT","why":"fixed schema, no judgment, fully deterministic"}
+{"id":"c02","step":"Read the incident thread and write a summary of what went wrong for the postmortem.","expect":"SKILL","why":"language reasoning over variable input"}
+{"id":"c03","step":"Publish the postmortem to the public status page.","expect":"GATE","why":"published externally and irreversible; Q1 fires before Q2"}
+{"id":"c04","step":"Transfer the vendor payment once the invoice is approved.","expect":"GATE","why":"financial"}
+{"id":"c05","step":"Rename every .jpeg in the folder to .jpg.","expect":"SCRIPT","why":"mechanical, no ambiguity"}
+{"id":"c06","step":"Decide which of the three vendor quotes to accept.","expect":"GATE","why":"financial consequence and business judgment"}
+{"id":"c07","step":"Draft a reply to the customer explaining the delay.","expect":"SKILL","why":"judgment over variable input; drafting is reversible, sending is not"}
+{"id":"c08","step":"Send the reply to the customer.","expect":"GATE","why":"irreversible external communication; separated from c07 deliberately"}
+{"id":"c09","step":"Check whether the nightly build passed and record the result.","expect":"SCRIPT","why":"fixed query, fixed schema"}
+{"id":"c10","step":"Handle the exceptions.","expect":"UNDERSPECIFIED","why":"answers no to all three questions; return to stage 2 rather than forcing a bucket"}
+{"id":"c11","step":"Update the patient's medication list in the chart.","expect":"GATE","why":"clinical"}
+{"id":"c12","step":"Group the open tickets by reported component.","expect":"SCRIPT","why":"deterministic grouping on an existing field"}
+{"id":"c13","step":"Figure out which open tickets are actually the same underlying bug.","expect":"SKILL","why":"requires judgment; superficially similar to c12"}
+{"id":"c14","step":"Delete the archived branches older than a year.","expect":"GATE","why":"irreversible destruction, even though mechanically trivial"}
+{"id":"c15","step":"Do the usual cleanup.","expect":"UNDERSPECIFIED","why":"no declared inputs; violates admission.require_declared_inputs"}

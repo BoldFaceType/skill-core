@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "status": "PROPOSED-not-applied",
+  "note": "Proposed amendments to selection.json arising from VSA 0.2 source locking. NOT applied. selection.json is curation and requires a human decision. Evidence for each change is in skill-core/GAP_REPORT_v2.md.",
+  "generated": "2026-08-08",
+  "base_selection_updated": "2026-08-04",
+  "changes": [
+    {
+      "action": "rename",
+      "from": "to-prd",
+      "to": "to-spec",
+      "source": "mattpocock/skills",
+      "path": "skills/engineering/to-spec/SKILL.md",
+      "reason": "`to-prd` does not exist upstream at commit 84fdeffd12; `to-spec` matches the functional role",
+      "ref": "GAP_REPORT_v2 B1"
+    },
+    {
+      "action": "rename",
+      "from": "to-issues",
+      "to": "to-tickets",
+      "source": "mattpocock/skills",
+      "path": "skills/engineering/to-tickets/SKILL.md",
+      "reason": "`to-issues` does not exist upstream; `to-tickets` matches the functional role",
+      "ref": "GAP_REPORT_v2 B2"
+    },
+    {
+      "action": "disambiguate",
+      "id": "skillopt-sleep",
+      "source": "microsoft/SkillOpt",
+      "path": "plugins/codex/skills/skillopt-sleep/SKILL.md",
+      "reason": "three distinct platform variants exist; codex matches the default engine",
+      "ref": "GAP_REPORT_v2 C1"
+    },
+    {
+      "action": "remove",
+      "id": "xlsx",
+      "source": "anthropics/skills",
+      "reason": "all-rights-reserved license; vendoring would redistribute without a grant",
+      "ref": "GAP_REPORT_v2 A1"
+    },
+    {
+      "action": "remove",
+      "id": "doc-coauthoring",
+      "source": "anthropics/skills",
+      "reason": "no license beside the skill and no repository-root LICENSE; no redistribution right",
+      "ref": "GAP_REPORT_v2 A2"
+    },
+    {
+      "action": "add",
+      "id": "to-questionnaire",
+      "source": "mattpocock/skills",
+      "group": "engineering",
+      "path": "skills/productivity/to-questionnaire/SKILL.md",
+      "reason": "referenced by workflows/process-discovery stage 4 (approval gate) but absent from selection; verified present upstream",
+      "ref": "validate_workflows.py failure"
+    }
+  ],
+  "resulting_core_size": 21,
+  "apply_instructions": [
+    "Edit skill-core/selection.json by hand to reflect accepted changes.",
+    "Add a `path` field for skillopt-sleep to disambiguate the platform variant.",
+    "Run: python scripts/lock_sources.py",
+    "Run: python scripts/validate_workflows.py",
+    "Both must exit 0 before VSA 0.2 closes."
+  ]
+}
