@@ -26,6 +26,10 @@ jobs:
       - name: Validate workflows
         run: python scripts/validate_workflows.py
 
+      # FR7 gate. Projection must reproduce cleanly from the vendored tree.
+      - name: Project skills
+        run: python scripts/project_skills.py
+
       # Network. Fails if upstream content diverges from the lock.
       - name: Check upstream drift
         run: python scripts/lock_sources.py --check

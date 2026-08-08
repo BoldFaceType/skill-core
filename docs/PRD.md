@@ -49,7 +49,7 @@ The core has **no target size**. Its size is an outcome of curation, not an inpu
 
 **FR8 — Optional host wrappers.** Generate OpenCode command entrypoints without duplicating skills.
 
-**FR9 — One CLI.** Expose workflow manifests through a single CLI usable by Marimo and CI.
+**FR9 — One interface.** Expose workflow manifests through stdlib-only scripts in `scripts/`, invoked identically by the shell, Marimo, and CI. No package, no editable install, no console entry points. See `decisions/0005-scripts-not-a-cli.md`.
 
 **FR10 — Explicit tracker ownership.** Keep GitHub and Linear ownership explicit per workflow.
 
@@ -94,6 +94,8 @@ The core has **no target size**. Its size is an outcome of curation, not an inpu
 | FR4 | ✅ | `workflows/process-discovery/workflow.toml` |
 | FR5 | ✅ | validated by `validate_workflows.py` |
 | FR6 | ✅ declared | gate stage present; runtime pause is VSA 0.3 |
-| FR7 | ⬜ | installer exists in main repo; smoke test not yet run against vendored tree |
-| FR8–FR12 | ⬜ | VSA 0.3–0.5 |
+| FR7 | ✅ | `project_skills.py`: 23 core + 1 entrypoint projected, hashes verified, unmanaged skill survived refresh |
+| FR8 | ⬜ | VSA 0.3 |
+| FR9 | ✅ | six stdlib-only scripts in `scripts/`; ADR-0005 |
+| FR10–FR12 | ⬜ | VSA 0.3–0.5 |
 | FR13 | ✅ | `lock_sources.py --check`, exit 0 |

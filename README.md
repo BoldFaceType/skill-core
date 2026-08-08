@@ -49,13 +49,18 @@ Copy into the repository root. No existing paths are overwritten except `skill-c
 ```bash
 python scripts/verify_core.py             # FR1 gate — offline, no network
 python scripts/validate_workflows.py      # workflow references resolve
+python scripts/project_skills.py          # materialize .agents/skills
 python scripts/lock_sources.py --check    # upstream drift (network)
 python scripts/vendor_skills.py --dry-run # vendoring is current
 ```
 
-All four exit 0 against the shipped state. `verify_core.py` was negative-tested: a tampered vendor file and a downgraded license each produce a violation and exit 1.
+All exit 0 against the shipped state. Every script is **stdlib-only** — there is
+nothing to install first. See `decisions/0005-scripts-not-a-cli.md` for why this
+is not a packaged CLI.
 
-**Windows / `C:\Dev\projects\Skill Core`:** see `INSTALL.md`. It flags one issue with the repo path before anything else.
+`verify_core.py` was negative-tested: a tampered vendor file and a downgraded license each produce a violation and exit 1. `project_skills.py` was tested against a hand-installed skill, which survived a refresh.
+
+**Windows / `C:\Dev\projects\skill-core`:** see `INSTALL.md`.
 
 ## Results
 
