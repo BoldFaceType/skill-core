@@ -22,6 +22,10 @@ jobs:
       - name: Verify core integrity (FR1)
         run: python scripts/verify_core.py
 
+      # Projection behavior: targets, collisions, swap safety, sync. Offline.
+      - name: Test projection
+        run: python -m unittest discover -s tests -v
+
       # Workflow manifests resolve against the lock.
       - name: Validate workflows
         run: python scripts/validate_workflows.py

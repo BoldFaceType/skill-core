@@ -5,6 +5,38 @@ All notable changes to Skill Core are documented here.
 Format based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/);
 versioning follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [Unreleased]
+
+User-scope projection targets, collision policy, and one-command sync. See
+`decisions/0006-user-scope-targets-and-collision-policy.md`.
+
+### Added
+
+- `project_skills.py --targets claude,agents` — projects to `~/.claude/skills`
+  and `~/.agents/skills`. Each root keeps its own manifest.
+- `--sync` — `git pull --ff-only`, then project to `claude,agents`. A failed
+  pull aborts before anything is projected.
+- `--adopt` / `--force` and exit code 2 for collisions. An unmanaged directory is
+  never modified; `--force` moves it to `~/.skillstore-backup/` first.
+- `--root` / `SKILLCORE_ROOT` — the script no longer requires the repo root as cwd.
+- `tests/test_project_skills.py` — 29 stdlib tests; new CI step.
+
+### Fixed
+
+- Projecting over an existing same-name directory crashed (`copytree`).
+- Refresh deleted owned skills before copying; a crash lost them. Writes are now
+  staged and swapped, and a failed swap restores the old copy.
+- Link-mode refresh refused its own symlinks (containment check resolved them
+  outside the root).
+- Entrypoint skills were written in text mode (CRLF on Windows); now bytes (LF).
+- The manifest was rewritten on every run; now only when it changes.
+
+### Changed
+
+- `--scope` defaults to `project` unless `--targets` or `--sync` is given.
+  Existing invocations behave as before.
+- Manifest gains a `target` field (schema_version unchanged).
+
 ## [0.2.0] - 2026-08-08
 
 Source lock, license verification, vendoring, and projection. CI green.

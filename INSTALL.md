@@ -131,6 +131,36 @@ Creating the GitHub repository and authenticating are yours to do — I can't an
 
 ---
 
+## 8. Sync skills to every agent on this machine
+
+After the repo is cloned (any path, any OS), one command pulls and projects to
+Claude Code (`~/.claude/skills`) and Codex/OpenCode/GitHub agents (`~/.agents/skills`):
+
+```powershell
+python scripts/project_skills.py --sync
+```
+
+First run on a machine that already has skills in those folders: look before you write.
+
+```powershell
+python scripts/project_skills.py --sync --dry-run   # names every collision, writes nothing
+```
+
+A skill you already have under the same name is **skipped, never overwritten**
+(exit 2). Decide per run:
+
+| You want | Flag |
+|---|---|
+| Keep yours, take ownership only if it is byte-identical to the vendored copy | `--adopt` |
+| Replace yours with the vendored copy; yours is saved to `~\.skillstore-backup\` | `--force` |
+
+Skills this script created are tracked in `.skillstore-projection.json` in each
+target folder; skills you installed by hand or via a plugin are never touched.
+Roll everything back with `python scripts/project_skills.py --targets claude,agents --prune`.
+
+Do not name a skill folder `synced`: Claude Code reserves `~/.claude/skills/synced`
+for claude.ai account sync.
+
 ## Gitignore additions
 
 ```gitignore

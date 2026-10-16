@@ -26,3 +26,6 @@ Thumbs.db
 .DS_Store
 .idea/
 .vscode/
+
+# Transient staging dir for project_skills.py; present only mid-run or after a crash.
+.skillstore-stage/
